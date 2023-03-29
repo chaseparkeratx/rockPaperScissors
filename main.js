@@ -13,11 +13,31 @@ const rl = readline.createInterface({
 
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
+  const trimmed1 = hand1.trim().toLowerCase()
+  const trimmed2 = hand2.trim().toLowerCase()
+  if (trimmed1 === trimmed2) {
+    return "It's a tie!"
+  }
+  if (trimmed1 === 'rock' && trimmed2 === 'scissors') {
+    return "Hand one wins!"
+  } else if (trimmed1 === 'rock' && trimmed2 === 'paper') {
+    return "Hand two wins!"
+  } else if (trimmed1 === 'scissors' && trimmed2 === 'paper') {
+    return "Hand one wins!"
+  } else if (trimmed1 === 'scissors' && trimmed2 === 'rock') {
+    return "Hand two wins!"
+  } else if (trimmed1 === 'paper' && trimmed2 === 'scissors') {
+    return "Hand two wins!"
+  } else if (trimmed1 === 'paper' && trimmed2 === 'rock') {
+    return "Hand one wins!"
+  }
+}
+
+
 
   // Write code here
   // Use the unit test to see what is expected
 
-}
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
